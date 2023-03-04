@@ -10,9 +10,11 @@ import './index.css'
 const Cart = () => (
   <CartContext.Consumer>
     {value => {
-      const {cartList} = value
+      const {cartList, removeAllCartItems} = value
       const showEmptyView = cartList.length === 0
       // TODO: Update the functionality to remove all the items in the cart
+
+      const removeCartListFromCart = () => removeAllCartItems()
 
       return (
         <>
@@ -23,6 +25,16 @@ const Cart = () => (
             ) : (
               <div className="cart-content-container">
                 <h1 className="cart-heading">My Cart</h1>
+                <div className="remove-container">
+                  <button
+                    className="remove-all-btn"
+                    type="button"
+                    onClick={removeCartListFromCart}
+                    data-testid="remove"
+                  >
+                    Remove All
+                  </button>
+                </div>
                 <CartListView />
                 <div className="flex-end-container">
                   <CartSummary />

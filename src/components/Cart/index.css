@@ -42,3 +42,21 @@
   display: flex;
   align-self: flex-end;
 }
+
+.remove-container {
+  display: flex;
+  align-self: flex-end;
+}
+
+.remove-all-btn {
+  height: 35px;
+  width: 120px;
+  background-color: transparent;
+  color: #0b69ff;
+  border-width: 0;
+  cursor: pointer;
+  outline: none;
+  font-family: 'Roboto';
+  font-size: 16px;
+  font-weight: 500;
+}
